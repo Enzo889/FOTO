@@ -3,11 +3,15 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import {
-  CircleIcon,
-  FileIcon,
+  Home,
   LaptopIcon,
   MoonIcon,
+  PersonStanding,
+  Plane,
+  Rabbit,
+  Sprout,
   SunIcon,
+  Utensils,
 } from "lucide-react";
 import { useTheme } from "next-themes";
 
@@ -75,6 +79,33 @@ export function CommandMenu({ ...props }) {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
 
+          <CommandSeparator />
+          <CommandGroup heading="Pages">
+            <CommandItem onSelect={() => router.push("/architecture")}>
+              <Home className="mr-2 h-4 w-4" />
+              Architecture
+            </CommandItem>
+            <CommandItem onSelect={() => router.push("/people")}>
+              <PersonStanding className="mr-2 h-4 w-4" />
+              People
+            </CommandItem>
+            <CommandItem onSelect={() => router.push("/travel")}>
+              <Plane className="mr-2 h-4 w-4" />
+              Travel
+            </CommandItem>
+            <CommandItem onSelect={() => router.push("/animals")}>
+              <Rabbit className="mr-2 h-4 w-4" />
+              Animals
+            </CommandItem>
+            <CommandItem onSelect={() => router.push("/nature")}>
+              <Sprout className="mr-2 h-4 w-4" />
+              Nature
+            </CommandItem>
+            <CommandItem onSelect={() => router.push("/Food")}>
+              <Utensils className="mr-2 h-4 w-4" />
+              Food
+            </CommandItem>
+          </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Theme">
             <CommandItem onSelect={() => runCommand(() => setTheme("light"))}>

@@ -30,42 +30,42 @@ export function Category() {
   }[] = [
     {
       title: "Architecture",
-      href: "/docs/primitives/alert-dialog",
+      href: "/architecture",
       description:
         "Explore the world's iconic buildings and delve into architectural history and styles.",
       icon: <Home />, // Asigna el ícono Home
     },
     {
       title: "People",
-      href: "/docs/primitives/hover-card",
+      href: "/people",
       description:
         "Connect with diverse cultures, discover inspiring stories, and celebrate human diversity.",
       icon: <PersonStanding />, // Asigna el ícono PersonStanding
     },
     {
       title: "Travel",
-      href: "/docs/primitives/progress",
+      href: "/travel",
       description:
         "Embark on virtual journeys, uncover hidden gems, and plan your dream vacation with our guides.",
       icon: <Plane />, // Asigna el ícono Plane
     },
     {
       title: "Animals",
-      href: "/docs/primitives/scroll-area",
+      href: "/animals",
       description:
         "Admire the wonders of the animal kingdom, learn about endangered species, and explore animal behavior.",
       icon: <Rabbit />, // Asigna el ícono Rabbit
     },
     {
       title: "Nature",
-      href: "/docs/primitives/tabs",
+      href: "/nature",
       description:
         "Immerse yourself in the beauty of nature, understand ecosystems, and discover the importance of conservation.",
       icon: <Sprout />, // Asigna el ícono Sprout
     },
     {
       title: "Food",
-      href: "/docs/primitives/tooltip",
+      href: "/food",
       description:
         "Indulge in a global culinary adventure, learn to cook authentic dishes, and discover food traditions.",
       icon: <Utensils />, // Asigna el ícono Utensils
@@ -73,13 +73,11 @@ export function Category() {
   ];
 
   return (
-    <NavigationMenu>
+    <NavigationMenu className="hidden md:block">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="p-4 dark:hover:bg-neutral-800/50 hover:bg-neutral-200 rounded-lg">
-            Category
-          </NavigationMenuTrigger>
-          <NavigationMenuContent className=" dark:bg-black bg-white  ">
+          <NavigationMenuTrigger>Category</NavigationMenuTrigger>
+          <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
                 <ListItem
@@ -113,7 +111,7 @@ const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
           <a
             ref={ref}
             className={cn(
-              "block select-none space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground dark:hover:bg-neutral-800/50 dark:focus:bg-neutral-800/50 hover:bg-neutral-200 focus:bg-neutral-200 ",
+              "block select-none space-y-1 rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground ",
               className
             )}
             {...props}
