@@ -7,7 +7,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import {
-  HandMetalIcon,
   Home,
   LucideGithub,
   Menu,
@@ -18,6 +17,7 @@ import {
   Utensils,
 } from "lucide-react";
 import Link from "next/link";
+import Logo from "./logo";
 
 function SheetLeft() {
   const Pages: {
@@ -64,9 +64,9 @@ function SheetLeft() {
         </SheetTrigger>
         <SheetContent side="left">
           <SheetHeader>
-            <SheetTitle className=" flex gap-2 items-center justify-center font-bold text-2xl">
+            <SheetTitle className=" flex gap-2 items-center justify-center ">
               {" "}
-              <HandMetalIcon /> Foto
+              <Logo size={32} />
             </SheetTitle>
             <SheetDescription className="flex flex-col gap-4 text-lg">
               {Pages.map((page) => {

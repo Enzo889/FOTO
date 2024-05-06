@@ -1,17 +1,17 @@
-import { HandMetalIcon, LucideGithub } from "lucide-react";
+import { LucideGithub } from "lucide-react";
 import { Category } from "./Category";
 import { ModeToggle } from "./ModeToggle";
 import { CommandMenu } from "./command-menu";
 import Link from "next/link";
 import SheetLeft from "./SheetLeft";
+import Logo from "./logo";
 
 export function Navbar() {
   return (
     <nav className="flex items-center justify-between  gap-12 p-4 border-b dark:border-neutral-900 border-neutral-300 backdrop-blur-sm fixed w-full">
       <div className="flex items-center gap-4">
         <Link href="/" className="flex items-center gap-4">
-          <HandMetalIcon />
-          <h1 className="text-2xl font-bold">Foto</h1>
+          <Logo size={32} />
         </Link>
         <Category />
       </div>

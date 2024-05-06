@@ -13,7 +13,7 @@ export default function Home() {
           </ButtonShootingStarBorder>
         </Link>
         <h1 className="scroll-m-20  lg:text-5xl text-center text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">
-          Foto - Embracing the Art of Seeing
+          Embracing the Art of Seeing
         </h1>
         <p className=" text-center text-lg font-light text-foreground">
           In Foto, we believe in the power of visual storytelling, <br /> and
