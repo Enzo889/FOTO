@@ -6,7 +6,7 @@ import { Montserrat } from "next/font/google";
 const montserrat = Montserrat({ subsets: ["latin"] });
 const Logo = ({ size = 32 }) => {
   const { resolvedTheme } = useTheme();
-  const logoTheme = resolvedTheme === "dark" ? "white" : "black";
+  const logoTheme = resolvedTheme === "light" ? "black" : "white";
   const logoPath = `/logo/logo-${logoTheme}-${size}x${size}.png`;
 
   return (

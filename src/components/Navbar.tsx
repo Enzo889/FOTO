@@ -8,7 +8,7 @@ import Logo from "./logo";
 
 export function Navbar() {
   return (
-    <nav className="flex items-center justify-between  gap-12 p-4 border-b dark:border-neutral-900 border-neutral-300 backdrop-blur-sm fixed w-full">
+    <nav className="flex z-50 items-center justify-between  gap-12 p-4 border-b dark:border-neutral-900 border-neutral-300 backdrop-blur-lg fixed w-full">
       <div className="flex items-center gap-4">
         <Link href="/" className="flex items-center gap-4">
           <Logo size={32} />

@@ -1,5 +1,6 @@
 import ButtonShootingStarBorder from "@/components/button-star";
 import { Button } from "@/components/ui/button";
+import { UnsplashImages } from "@/utils/data";
 import { Github } from "lucide-react";
 import Link from "next/link";
 
@@ -33,6 +34,9 @@ export default function Home() {
             <Button variant="outline">Visit Unsplash</Button>
           </Link>
         </div>
+      </div>
+      <div>
+        <UnsplashImages />
       </div>
     </div>
   );
