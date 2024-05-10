@@ -16,6 +16,8 @@ import {
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Spinner } from "@/components/Spinner";
+import { ArrowDownToLine, MoveUpRight, X } from "lucide-react";
 
 const BASE_URL = "https://api.unsplash.com/";
 const SEARCH = "search/photos";
@@ -69,7 +71,12 @@ export const UnsplashImages = () => {
   const { data, error } = useSWR<Image[]>(`${BASE_URL}${FEED}`, fetcher);
 
   if (error) return <div>Failed to load images</div>;
-  if (!data) return <div>Loading...</div>;
+  if (!data)
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <Spinner size={"lg"} />
+      </div>
+    );
 
   return (
     <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
@@ -86,6 +93,8 @@ export const UnsplashImages = () => {
                   src={image.urls.regular}
                   alt={image.alt_description || "Unsplash Image"}
                   loading="lazy"
+                  blurDataURL={image.urls.regular}
+                  title={image.alt_description || "Unsplash Image"}
                   width={image.width}
                   height={image.height}
                   className="w-full h-full object-cover rounded-lg transform hover:scale-110 transition-transform duration-300"
@@ -100,7 +109,7 @@ export const UnsplashImages = () => {
                       target="_blank"
                       about="Unsplash profile"
                     >
-                      {image.user.name}{" "}
+                      {image.user.name || "No name"}{" "}
                       <Image
                         src={image.user.profile_image.small}
                         alt={image.user.name}
@@ -110,30 +119,50 @@ export const UnsplashImages = () => {
                       />
                     </Link>
                   </DrawerTitle>
-                  <DrawerDescription>
-                    <p>about: {image.user.bio}</p>
-                    <p>location: {image.user.location}</p>
-                    <div className="flex flex-col">
+                  <DrawerDescription className="space-y-5">
+                    <p>
+                      About <br />
+                      <span className="text-black dark:text-white">
+                        {image.user.bio || "No bio"}
+                      </span>
+                    </p>
+                    <p>
+                      Location <br />
+                      <span className="text-black dark:text-white">
+                        {image.user.location || "No location"}
+                      </span>
+                    </p>
+                    <p>
+                      Photo Description <br />{" "}
+                      <span className="text-black dark:text-white">
+                        {image.alt_description || "No description"}
+                      </span>
+                    </p>
+                    <div className="flex  justify-between items-center">
                       <Link
-                        className="hover:underline"
+                        className="hover:underline flex items-center gap-1"
                         href={image.links.html}
                         target="_blank"
+                        title="to unsplash"
                       >
-                        view in unsplash
+                        <MoveUpRight className="w-4 h-4" /> view in unsplash
                       </Link>
-                      <Link
-                        className="hover:underline"
+                      <a
+                        className="hover:underline flex items-center gap-1"
                         target="_blank"
+                        title="download"
                         href={image.links.download}
+                        download
                       >
+                        <ArrowDownToLine className="w-4 h-4" />
                         download image
-                      </Link>
+                      </a>
                     </div>
                   </DrawerDescription>
                 </DrawerHeader>
                 <DrawerFooter>
-                  <DrawerClose>
-                    <Button variant="outline">Close</Button>
+                  <DrawerClose title="Close">
+                    <X className="w-5 h-5 opacity-35 hover:opacity-100 transition-opacity duration-300" />
                   </DrawerClose>
                 </DrawerFooter>
               </DrawerContent>
