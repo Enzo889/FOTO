@@ -1,8 +1,7 @@
 "use client";
-
-import useSWR from "swr";
-import axios from "axios";
-import Image from "next/image";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import { UnsplashImages } from "../utils/data";
+import { Spinner } from "@/components/Spinner";
 import {
   Drawer,
   DrawerClose,
@@ -13,62 +12,14 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import Link from "next/link";
-import { Spinner } from "@/components/Spinner";
 import { ArrowDownToLine, MoveUpRight, X } from "lucide-react";
+import { useState } from "react";
 
-const BASE_URL = "https://api.unsplash.com/";
-const SEARCH = "search/photos";
-const RANDOM = "photos/random";
-const FEED = "photos?page=1&per_page=22";
-const API_KEY = process.env.NEXT_PUBLIC_UNSPLASH_ACCESS_KEY;
-
-interface Image {
-  id: string;
-  urls: {
-    regular: string;
-    full: string;
-    small: string;
-    small_s3: string;
-  };
-  description: string;
-  width: number;
-  height: number;
-  color: string;
-  alt_description: string;
-  user: {
-    name: string;
-    bio: string;
-    location: string;
-    username: string;
-    profile_image: {
-      small: string;
-      medium: string;
-      large: string;
-    };
-    links: {
-      html: string;
-    };
-  };
-  links: {
-    html: string;
-    download: string;
-  };
-}
-
-const fetcher = (url: string) =>
-  axios
-    .get(url, {
-      headers: {
-        Authorization: `Client-ID ${API_KEY}`,
-      },
-    })
-    .then((res) => res.data);
-
-export const UnsplashImages = () => {
-  const { data, error } = useSWR<Image[]>(`${BASE_URL}${FEED}`, fetcher);
+export default function Feed() {
+  const { data, error } = UnsplashImages();
+  const [isLoading, setLoading] = useState(true);
 
   if (error) return <div>Failed to load images</div>;
   if (!data)
@@ -113,6 +64,7 @@ export const UnsplashImages = () => {
                       <Image
                         src={image.user.profile_image.small}
                         alt={image.user.name}
+                        loading="lazy"
                         width={24}
                         height={24}
                         className="rounded-full"
@@ -172,4 +124,4 @@ export const UnsplashImages = () => {
       </Masonry>
     </ResponsiveMasonry>
   );
-};
+}

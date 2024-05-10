@@ -1,6 +1,6 @@
 import ButtonShootingStarBorder from "@/components/button-star";
 import { Button } from "@/components/ui/button";
-import { UnsplashImages } from "@/utils/data";
+import Feed from "@/components/feed";
 import { Github } from "lucide-react";
 import Link from "next/link";
 
@@ -36,7 +36,9 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <UnsplashImages />
+        <Feed />
+        {/* <UnsplashImages />
+        <Gallery /> */}
       </div>
     </div>
   );
