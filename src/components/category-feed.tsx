@@ -1,6 +1,6 @@
 "use client";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import { UnsplashImages } from "../utils/data";
+import { UnsplashImagesSearch } from "../utils/data";
 import { Spinner } from "@/components/Spinner";
 import {
   Drawer,
@@ -16,8 +16,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowDownToLine, MoveUpRight, X } from "lucide-react";
 
-export default function Feed() {
-  const { data, error } = UnsplashImages();
+export default function CategoryFeed() {
+  const { data, error } = UnsplashImagesSearch("architecture");
 
   if (error) return <div>Failed to load images</div>;
   if (!data)
