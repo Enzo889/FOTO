@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import axios from "axios";
 import Image from "next/image";
+import { ImagesSearch } from "@/interfaces/search";
 
 const BASE_URL = "https://api.unsplash.com/";
 const SEARCH = "search/photos";
@@ -62,8 +63,8 @@ export const UnsplashImagesCarousel1 = () => {
 };
 
 export const UnsplashImagesSearch = (query: string) => {
-  const { data, error } = useSWR<Image[]>(
-    `${BASE_URL}${SEARCH}?query=${query}`,
+  const { data, error } = useSWR<ImagesSearch>(
+    `${BASE_URL}${SEARCH}/?page=1&per_page=22&query=${query}`,
     fetcher
   );
   return { data, error };

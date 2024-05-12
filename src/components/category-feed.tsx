@@ -17,7 +17,7 @@ import Link from "next/link";
 import { ArrowDownToLine, MoveUpRight, X } from "lucide-react";
 
 export default function CategoryFeed() {
-  const { data, error } = UnsplashImagesSearch("architecture");
+  const { data, error } = UnsplashImagesSearch("caniche");
 
   if (error) return <div>Failed to load images</div>;
   if (!data)
@@ -30,7 +30,7 @@ export default function CategoryFeed() {
   return (
     <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
       <Masonry gutter="10px" className="py-5">
-        {data?.map((image) => (
+        {data.results?.map((image) => (
           <div
             key={image.id}
             className="overflow-hidden  rounded-lg aspect-ratio-[4/3] shadow-lg hover:shadow-2xl transition-shadow duration-300"
@@ -54,14 +54,14 @@ export default function CategoryFeed() {
                   <DrawerTitle>
                     <Link
                       className="flex items-center gap-2  decoration-1 underline-offset-4 hover:underline "
-                      href={image.user.links.html}
+                      href={image.links.html}
                       target="_blank"
                       about="Unsplash profile"
                     >
                       {image.user.name || "No name"}{" "}
                       <Image
                         src={image.user.profile_image.small}
-                        alt={image.user.name}
+                        alt={image.user.name || "Unsplash Image"}
                         loading="lazy"
                         width={24}
                         height={24}
@@ -85,7 +85,7 @@ export default function CategoryFeed() {
                     <p>
                       Photo Description <br />{" "}
                       <span className="text-black dark:text-white">
-                        {image.alt_description || "No description"}
+                        {image.description || "No description"}
                       </span>
                     </p>
                     <div className="flex  justify-between items-center">
