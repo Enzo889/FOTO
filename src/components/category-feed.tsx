@@ -16,8 +16,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowDownToLine, MoveUpRight, X } from "lucide-react";
 
-export default function CategoryFeed() {
-  const { data, error } = UnsplashImagesSearch("caniche");
+export default function CategoryFeed({ query }: { query: string }) {
+  const { data, error } = UnsplashImagesSearch(query);
 
   if (error) return <div>Failed to load images</div>;
   if (!data)
@@ -105,7 +105,7 @@ export default function CategoryFeed() {
                         download
                       >
                         <ArrowDownToLine className="w-4 h-4" />
-                        download image
+                        view in fullscreen
                       </a>
                     </div>
                   </DrawerDescription>

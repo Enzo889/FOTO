@@ -2,12 +2,12 @@ import CategoryFeed from "@/components/category-feed";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Architecture | FOTO",
+  title: "Food",
 };
 function page() {
   return (
     <div className="pt-20">
-      <CategoryFeed />
+      <CategoryFeed query="Food" />
     </div>
   );
 }

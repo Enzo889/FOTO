@@ -105,7 +105,7 @@ export default function Feed() {
                         download
                       >
                         <ArrowDownToLine className="w-4 h-4" />
-                        download image
+                        view in fullscreen
                       </a>
                     </div>
                   </DrawerDescription>
