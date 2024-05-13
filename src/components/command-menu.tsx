@@ -101,7 +101,7 @@ export function CommandMenu({ ...props }) {
               <Sprout className="mr-2 h-4 w-4" />
               Nature
             </CommandItem>
-            <CommandItem onSelect={() => router.push("/Food")}>
+            <CommandItem onSelect={() => router.push("/food")}>
               <Utensils className="mr-2 h-4 w-4" />
               Food
             </CommandItem>

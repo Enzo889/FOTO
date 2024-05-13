@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Feed from "@/components/feed";
 import { Github } from "lucide-react";
 import Link from "next/link";
+import { Icons } from "@/components/Icons";
 
 export default function Home() {
   return (
@@ -18,9 +19,13 @@ export default function Home() {
         </h1>
         <p className=" text-center text-lg font-light text-foreground">
           In Foto, we believe in the power of visual storytelling, <br /> and
-          with the Unsplash API at our fingertips, we bring you a curated
-          collection of photographs <br /> that capture the essence of life,
-          beauty, and emotion.
+          with the
+          <span className="relative px-2 font-semibold">
+            Unsplash API{" "}
+            <Icons.underline className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-3.5 text-blue-950/80" />
+          </span>
+          at our fingertips, we bring you a curated collection of photographs{" "}
+          <br /> that capture the essence of life, beauty, and emotion.
         </p>
         <div className="space-x-8">
           <Link href={"https://github.com/Enzo889/FOTO"} target="_blank">
