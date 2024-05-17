@@ -1,6 +1,7 @@
 "use client";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { UnsplashImagesSearch } from "../utils/data";
+import { useInView } from "react-intersection-observer";
 import { Spinner } from "@/components/Spinner";
 import {
   Drawer,
@@ -17,10 +18,10 @@ import Link from "next/link";
 import { ArrowDownToLine, MoveUpRight, X } from "lucide-react";
 
 export default function CategoryFeed({ query }: { query: string }) {
-  const { data, error } = UnsplashImagesSearch(query);
+  const { data, error, isLoading } = UnsplashImagesSearch(query);
 
   if (error) return <div>Failed to load images</div>;
-  if (!data)
+  if (isLoading)
     return (
       <div className="flex items-center justify-center h-screen">
         <Spinner size={"lg"} />
@@ -30,7 +31,7 @@ export default function CategoryFeed({ query }: { query: string }) {
   return (
     <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
       <Masonry gutter="10px" className="py-5">
-        {data.results?.map((image) => (
+        {data?.results.map((image) => (
           <div
             key={image.id}
             className="overflow-hidden  rounded-lg aspect-ratio-[4/3] shadow-lg hover:shadow-2xl transition-shadow duration-300"
@@ -41,8 +42,8 @@ export default function CategoryFeed({ query }: { query: string }) {
                   key={image.id}
                   src={image.urls.regular}
                   alt={image.alt_description || "Unsplash Image"}
-                  loading="lazy"
-                  blurDataURL={image.urls.regular}
+                  loading="eager"
+                  blurDataURL={image.urls.small}
                   title={image.alt_description || "Unsplash Image"}
                   width={image.width}
                   height={image.height}

@@ -28,9 +28,9 @@ export const UnsplashImagesRandom = () => {
 };
 
 export const UnsplashImagesSearch = (query: string) => {
-  const { data, error } = useSWR<ImagesSearch>(
+  const { data, error, isLoading } = useSWR<ImagesSearch>(
     `${BASE_URL}${SEARCH}/?page=1&per_page=22&query=${query}`,
     fetcher
   );
-  return { data, error };
+  return { data, error, isLoading };
 };
