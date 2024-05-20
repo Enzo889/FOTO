@@ -5,6 +5,7 @@ import { CommandMenu } from "./command-menu";
 import Link from "next/link";
 import SheetLeft from "./SheetLeft";
 import Logo from "./logo";
+import { CarouselLabs } from "./carousel-labs";
 
 export function Navbar() {
   return (
@@ -14,6 +15,7 @@ export function Navbar() {
           <Logo size={32} />
         </Link>
         <Category />
+        <CarouselLabs />
       </div>
       <div className="flex items-center gap-2 max-sm:w-full">
         <CommandMenu />

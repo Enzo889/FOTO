@@ -20,7 +20,7 @@ import {
 } from "./ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
-export function Category() {
+export function CarouselLabs() {
   const components: {
     title: string;
     href: string;
@@ -28,8 +28,8 @@ export function Category() {
     icon: React.ReactElement;
   }[] = [
     {
-      title: "Architecture",
-      href: "/architecture",
+      title: "Shadcn-Version",
+      href: "/carousel",
       description:
         "Explore the world's iconic buildings and delve into architectural history and styles.",
       icon: <Home />, // Asigna el ícono Home
@@ -75,7 +75,7 @@ export function Category() {
     <NavigationMenu className="hidden md:block">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Category</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Carousel Labs</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]  ">
               {components.map((component) => (

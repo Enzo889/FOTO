@@ -22,11 +22,16 @@ import { useInView } from "react-intersection-observer";
 
 export default function Feed() {
   const placeholders = [
-    "What's the first rule of Fight Club?",
-    "Who is Tyler Durden?",
-    "Where is Andrew Laeddis Hiding?",
-    "Write a Javascript method to reverse a string",
-    "How to assemble your own PC?",
+    "Search for stunning landscapes...",
+    "Find your next design inspiration...",
+    "Discover beautiful nature photos...",
+    "Explore creative art and illustrations...",
+    "Look for breathtaking cityscapes...",
+    "Find the perfect background image...",
+    "Search for vibrant street photography...",
+    "Discover unique fashion shots...",
+    "Explore amazing wildlife photography...",
+    "Find your next travel destination...",
   ];
 
   const [searchText, setSearchText] = useState("");
@@ -48,8 +53,6 @@ export default function Feed() {
     e.preventDefault();
     setQuery(searchText);
   };
-
-  console.log(data);
 
   if (error) return <div>Failed to load images</div>;
   if (!data)
