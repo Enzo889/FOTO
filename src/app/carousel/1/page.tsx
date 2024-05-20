@@ -1,4 +1,4 @@
-import Carosuel1 from "@/components/carousel-shadcn";
+import Carosuel1 from "@/app/carousel/_components/carousel-shadcn";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

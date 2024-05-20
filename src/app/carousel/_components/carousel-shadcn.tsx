@@ -1,7 +1,7 @@
 "use client";
 import { UnsplashImagesRandom } from "@/utils/data";
 import Image from "next/image";
-import { Spinner } from "./Spinner";
+import { Spinner } from "../../../components/Spinner";
 import {
   Carousel,
   CarouselContent,
@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/drawer";
 import { ArrowDownToLine, MoveUpRight, X } from "lucide-react";
 
-import { Card, CardContent } from "./ui/card";
+import { Card, CardContent } from "../../../components/ui/card";
 import Link from "next/link";
 
 export default function Carousel1() {

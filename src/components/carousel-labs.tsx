@@ -29,42 +29,42 @@ export function CarouselLabs() {
   }[] = [
     {
       title: "Shadcn-Version",
-      href: "/carousel",
+      href: "/carousel/1",
       description:
         "Explore the world's iconic buildings and delve into architectural history and styles.",
       icon: <Home />, // Asigna el ícono Home
     },
     {
       title: "People",
-      href: "/people",
+      href: "/carousel/2",
       description:
         "Connect with diverse cultures, discover inspiring stories, and celebrate human diversity.",
       icon: <PersonStanding />, // Asigna el ícono PersonStanding
     },
     {
       title: "Travel",
-      href: "/travel",
+      href: "/carousel/3",
       description:
         "Embark on virtual journeys, uncover hidden gems, and plan your dream vacation with our guides.",
       icon: <Plane />, // Asigna el ícono Plane
     },
     {
       title: "Animals",
-      href: "/animals",
+      href: "/carousel/4",
       description:
         "Admire the wonders of the animal kingdom, learn about endangered species, and explore animal behavior.",
       icon: <Rabbit />, // Asigna el ícono Rabbit
     },
     {
       title: "Nature",
-      href: "/nature",
+      href: "/carousel/5",
       description:
         "Immerse yourself in the beauty of nature, understand ecosystems, and discover the importance of conservation.",
       icon: <Sprout />, // Asigna el ícono Sprout
     },
     {
       title: "Food",
-      href: "/food",
+      href: "/carousel/6",
       description:
         "Indulge in a global culinary adventure, learn to cook authentic dishes, and discover food traditions.",
       icon: <Utensils />, // Asigna el ícono Utensils
