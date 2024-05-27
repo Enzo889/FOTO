@@ -30,7 +30,6 @@ export default function CarouselDivz() {
   return (
     <div>
       <Divz
-        autoPlay={true}
         autoPlayDuration={2200}
         isDarkMode={true}
         showPlayButton={true}
