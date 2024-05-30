@@ -1,5 +1,15 @@
 "use client";
 import { Spinner } from "@/components/Spinner";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { UnsplashImagesRandom } from "@/utils/data";
 import {
@@ -9,7 +19,9 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
+import { ArrowDownToLine, MoveUpRight, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ThreeDPhotoCarousel() {
   const { data, error } = UnsplashImagesRandom();
@@ -59,7 +71,9 @@ export default function ThreeDPhotoCarousel() {
             transform: "rotateX(0deg)",
           }}
         >
-          <p className=" text-xl absolute ">Have so much fun</p>
+          <p className="text-center shadow-2xl text-3xl text-foreground absolute opacity-75 text-pretty  font-mono ">
+            Have so much fun!!
+          </p>
           <motion.div
             drag="x"
             className="relative flex h-full origin-center cursor-grab justify-center active:cursor-grabbing"
@@ -73,11 +87,11 @@ export default function ThreeDPhotoCarousel() {
             onDragEnd={handleDragEnd}
             animate={controls}
           >
-            {data?.map((images, i) => {
+            {data?.map((image, i) => {
               return (
                 <div
-                  key={images.id}
-                  className="absolute flex h-full origin-center items-center justify-center bg-mauve-dark-2 p-2"
+                  key={image.id}
+                  className="absolute flex h-full origin-center items-center justify-center bg-mauve-dark-2 "
                   style={{
                     width: `${faceWidth}px`,
                     transform: `rotateY(${
@@ -85,14 +99,87 @@ export default function ThreeDPhotoCarousel() {
                     }deg) translateZ(${radius}px)`,
                   }}
                 >
-                  <Image
-                    src={images.urls.regular}
-                    alt="img"
-                    width={images.width}
-                    height={images.height}
-                    loading="lazy"
-                    className="pointer-events-none h-12 w-full rounded-xl object-cover md:h-20"
-                  />
+                  <Drawer>
+                    <DrawerTrigger>
+                      <Image
+                        key={image.id}
+                        src={image.urls.regular}
+                        alt={image.alt_description || "Unsplash Image"}
+                        loading="eager"
+                        width={image.width}
+                        height={image.height}
+                        className="pointer-events-none h-12 w-full rounded-xl object-cover md:h-20"
+                      />
+                    </DrawerTrigger>
+                    <DrawerContent className="flex items-center justify-center">
+                      <DrawerHeader>
+                        <DrawerTitle>
+                          <Link
+                            className="flex items-center gap-2  decoration-1 underline-offset-4 hover:underline "
+                            href={image.user.links.html}
+                            target="_blank"
+                            about="Unsplash profile"
+                          >
+                            {image.user.name || "No name"}{" "}
+                            <Image
+                              src={image.user.profile_image.small}
+                              alt={image.user.name}
+                              loading="lazy"
+                              width={24}
+                              height={24}
+                              className="rounded-full"
+                            />
+                          </Link>
+                        </DrawerTitle>
+                        <DrawerDescription className="space-y-5">
+                          <p>
+                            About <br />
+                            <span className="text-black dark:text-white">
+                              {image.user.bio || "No bio"}
+                            </span>
+                          </p>
+                          <p>
+                            Location <br />
+                            <span className="text-black dark:text-white">
+                              {image.user.location || "No location"}
+                            </span>
+                          </p>
+                          <p>
+                            Photo Description <br />{" "}
+                            <span className="text-black dark:text-white">
+                              {image.alt_description || "No description"}
+                            </span>
+                          </p>
+                          <div className="flex  justify-between items-center">
+                            <Link
+                              className="hover:underline flex items-center gap-1"
+                              href={image.links.html}
+                              target="_blank"
+                              title="to unsplash"
+                            >
+                              <MoveUpRight className="w-4 h-4" /> view in
+                              unsplash
+                            </Link>
+                            <a
+                              className="hover:underline flex items-center gap-1"
+                              target="_blank"
+                              title="download"
+                              href={image.links.download}
+                              download
+                            >
+                              <ArrowDownToLine className="w-4 h-4" />
+                              view in fullscreen
+                            </a>
+                          </div>
+                        </DrawerDescription>
+                      </DrawerHeader>
+                      <DrawerFooter>
+                        <DrawerClose title="Close">
+                          <X className="w-5 h-5 opacity-35 hover:opacity-100 transition-opacity duration-300" />
+                        </DrawerClose>
+                      </DrawerFooter>
+                    </DrawerContent>
+                  </Drawer>
                 </div>
               );
             })}
