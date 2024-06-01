@@ -21,7 +21,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 52rem;
+  height: 25rem;
   padding-left: var(--slide-spacing);
 }
 
@@ -92,7 +92,14 @@
 .embla__slide__img {
   width: 100%;
   object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
-  object-position: center;
+  object-position: center; /* Asegura que la imagen cubra todo el contenedor */
+  aspect-ratio: 1/1;
+  height: 100%;
+}
+
+.embla__slide__img:hover {
+  scale: 1.05;
+  animation-duration: 0.5s ease-in-out;
 }
 .embla-thumbs__slide__img {
   width: 100%;
