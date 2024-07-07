@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="container  pt-40">
       <div className="flex flex-col items-center gap-4 w-auto">
-        <Link href={"https://twitter.com/enzonicolas24"} target="_blank">
+        <Link href={"https://twitter.com/enzodev_"} target="_blank">
           <ButtonShootingStarBorder>
             Follow me ⚡ on Twitter
           </ButtonShootingStarBorder>

@@ -3,10 +3,16 @@
 import * as React from "react";
 
 import {
+  Fingerprint,
+  FireExtinguisher,
+  GalleryHorizontal,
+  GalleryThumbnails,
   Home,
   PersonStanding,
   Plane,
   Rabbit,
+  Rotate3D,
+  Shrink,
   Sprout,
   Utensils,
 } from "lucide-react";
@@ -30,44 +36,41 @@ export function CarouselLabs() {
     {
       title: "Shadcn-Version",
       href: "/carousel/1",
-      description:
-        "Explore the world's iconic buildings and delve into architectural history and styles.",
-      icon: <Home />, // Asigna el ícono Home
+      description: "A carousel with motion and swipe built using Embla.",
+      icon: <GalleryHorizontal />, // Asigna el ícono Home
     },
     {
-      title: "People",
+      title: "Divz-Version",
       href: "/carousel/2",
-      description:
-        "Connect with diverse cultures, discover inspiring stories, and celebrate human diversity.",
-      icon: <PersonStanding />, // Asigna el ícono PersonStanding
+      description: "Scroll, swipe & zoom through content on the 3D z-axis",
+      icon: <Shrink />, // Asigna el ícono PersonStanding
     },
     {
-      title: "Travel",
+      title: "3D Carousel",
       href: "/carousel/3",
       description:
-        "Embark on virtual journeys, uncover hidden gems, and plan your dream vacation with our guides.",
-      icon: <Plane />, // Asigna el ícono Plane
+        "A 3D cylindrical photo carousel component that rotates on the Y-axis.",
+      icon: <Rotate3D />, // Asigna el ícono Plane
     },
     {
-      title: "Animals",
+      title: "Thumbnail",
       href: "/carousel/4",
-      description:
-        "Admire the wonders of the animal kingdom, learn about endangered species, and explore animal behavior.",
-      icon: <Rabbit />, // Asigna el ícono Rabbit
+      description: "A thumnails with motion and swipe built using Embla.",
+      icon: <GalleryThumbnails />, // Asigna el ícono Rabbit
     },
     {
-      title: "Nature",
+      title: "Swipeable",
       href: "/carousel/5",
       description:
-        "Immerse yourself in the beauty of nature, understand ecosystems, and discover the importance of conservation.",
-      icon: <Sprout />, // Asigna el ícono Sprout
+        "Swipeable stack cards created using framer-motion. The cards can be dragged and sent to the back of the stack.",
+      icon: <Fingerprint />, // Asigna el ícono Sprout
     },
     {
-      title: "Food",
+      title: "Sometime",
       href: "/carousel/6",
       description:
         "Indulge in a global culinary adventure, learn to cook authentic dishes, and discover food traditions.",
-      icon: <Utensils />, // Asigna el ícono Utensils
+      icon: <FireExtinguisher />, // Asigna el ícono Utensils
     },
   ];
 
@@ -75,7 +78,7 @@ export function CarouselLabs() {
     <NavigationMenu className="hidden md:block">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Carousel Labs</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Carousel Showcase</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]  ">
               {components.map((component) => (
