@@ -59,6 +59,14 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: "0",
+          },
+        },
         flip: {
           to: {
             transform: "rotate(360deg)",
@@ -81,6 +89,7 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "meteor-effect": "meteor 5s linear infinite",
         flip: "flip 6s infinite steps(2, end)",
         rotate: "rotate 3s linear infinite both",
       },
