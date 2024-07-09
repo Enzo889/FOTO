@@ -84,7 +84,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 <DrawerTrigger>
                   <Ellipsis
                     key={`${image.id}-ellipsis`}
-                    className=" absolute -top-2 right-2 w-14 h-14 p-4 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 dark:bg-black rounded-b-full text-blue-900 "
+                    className=" absolute -top-2 right-2 w-14 h-14 p-4 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 dark:bg-black rounded-b-full text-blue-900 max-md:opacity-100 "
                   />
                 </DrawerTrigger>
                 <DrawerContent className="flex items-center justify-center">

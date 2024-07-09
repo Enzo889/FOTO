@@ -19,7 +19,7 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
-import { ArrowDownToLine, MoveUpRight, X } from "lucide-react";
+import { ArrowDownToLine, MoveUpRight, ThumbsUp, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -71,9 +71,6 @@ export default function ThreeDPhotoCarousel() {
             transform: "rotateX(0deg)",
           }}
         >
-          <p className="text-center shadow-2xl text-3xl text-foreground absolute opacity-75 text-pretty  font-mono ">
-            Have so much fun!!
-          </p>
           <motion.div
             drag="x"
             className="relative flex h-full origin-center cursor-grab justify-center active:cursor-grabbing"
@@ -105,11 +102,15 @@ export default function ThreeDPhotoCarousel() {
                         key={image.id}
                         src={image.urls.regular}
                         alt={image.alt_description || "Unsplash Image"}
-                        loading="eager"
+                        loading="lazy"
                         width={image.width}
                         height={image.height}
                         className="pointer-events-none h-12 w-full rounded-xl object-cover md:h-20"
                       />
+                      <p className="text-black opacity-80 hover:opacity-100 transition-opacity duration-100 dark:text-white flex justify-center items-center gap-3">
+                        {image.user.total_likes}{" "}
+                        <ThumbsUp className="w-3 h-3" />
+                      </p>
                     </DrawerTrigger>
                     <DrawerContent className="flex items-center justify-center">
                       <DrawerHeader>
