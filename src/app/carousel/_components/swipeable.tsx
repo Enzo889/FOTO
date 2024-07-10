@@ -30,7 +30,7 @@ function CardRotate({ children, onSendToBack }: CardRotateProps) {
 
   return (
     <motion.div
-      className="absolute h-72 w-52 cursor-grab"
+      className="absolute h-80 w-52 cursor-grab"
       style={{ x, y, rotateX, rotateY }}
       drag
       dragConstraints={{ top: 0, right: 0, bottom: 0, left: 0 }}
@@ -151,8 +151,8 @@ export default function SwipeableStackCards() {
             </p>
           </details>
 
-          {/* Meaty part - Meteor effect */}
-          <Meteors number={20} />
+          {/* Meteor effect */}
+          <Meteors number={27} />
         </div>
       </div>
       <div
