@@ -1,5 +1,5 @@
-import Carosuel1 from "@/app/carousel/_components/carousel-shadcn";
 import { Metadata } from "next";
+import { SwipeCarousel } from "../_components/swipe-carousel";
 
 export const metadata: Metadata = {
   title: "Carousel | FOTO",
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 export default function Random() {
   return (
     <div className="pt-40">
-      <Carosuel1 />
+      <SwipeCarousel />
     </div>
   );
 }
