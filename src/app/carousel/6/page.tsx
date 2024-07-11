@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 };
 export default function Random() {
   return (
-    <div className="pt-40">
+    <div className="pt-24">
       <SwipeCarousel />
     </div>
   );

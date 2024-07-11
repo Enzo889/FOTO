@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import { UnsplashImagesRandom } from "@/utils/data";
 
@@ -12,8 +12,6 @@ const imgs = [
   "https://i.pinimg.com/564x/8c/e3/5f/8ce35f08a33293522c4d60cbc5e642be.jpg",
   "https://i.pinimg.com/564x/8c/e3/5f/8ce35f08a33293522c4d60cbc5e642be.jpg",
 ];
-
-// const { data, error } = UnsplashImagesRandom();
 
 const ONE_SECOND = 1000;
 const AUTO_DELAY = ONE_SECOND * 10;
@@ -59,7 +57,7 @@ export const SwipeCarousel = () => {
   };
 
   return (
-    <div className="relative overflow-hidden bg-neutral-950 py-8">
+    <div className="relative overflow-hidden bg-white dark:bg-neutral-950/70 py-8">
       <motion.div
         drag="x"
         dragConstraints={{
@@ -85,7 +83,7 @@ export const SwipeCarousel = () => {
   );
 };
 
-const Images = ({ imgIndex }) => {
+const Images = ({ imgIndex }: { imgIndex: number }) => {
   return (
     <>
       {imgs.map((imgSrc, idx) => {
@@ -101,7 +99,7 @@ const Images = ({ imgIndex }) => {
               scale: imgIndex === idx ? 0.95 : 0.85,
             }}
             transition={SPRING_OPTIONS}
-            className="aspect-video w-full h-screen  shrink-0 rounded-xl bg-neutral-800 object-cover"
+            className="aspect-video w-full h-[80vh] shrink-0 rounded-xl bg-neutral-800 object-cover"
           />
         );
       })}
@@ -109,7 +107,13 @@ const Images = ({ imgIndex }) => {
   );
 };
 
-const Dots = ({ imgIndex, setImgIndex }) => {
+const Dots = ({
+  imgIndex,
+  setImgIndex,
+}: {
+  imgIndex: number;
+  setImgIndex: Dispatch<SetStateAction<number>>;
+}) => {
   return (
     <div className="mt-4 flex w-full justify-center gap-2">
       {imgs.map((_, idx) => {
@@ -118,7 +122,9 @@ const Dots = ({ imgIndex, setImgIndex }) => {
             key={idx}
             onClick={() => setImgIndex(idx)}
             className={`h-3 w-3 rounded-full transition-colors ${
-              idx === imgIndex ? "bg-neutral-50" : "bg-neutral-500"
+              idx === imgIndex
+                ? "bg-green-700 dark:bg-neutral-200"
+                : "bg-green-400 dark:bg-neutral-500"
             }`}
           />
         );
