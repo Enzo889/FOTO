@@ -2,6 +2,7 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import { UnsplashImagesRandom } from "@/utils/data";
+import { Spinner } from "@/components/Spinner";
 
 const imgs = [
   "https://i.pinimg.com/564x/8c/e3/5f/8ce35f08a33293522c4d60cbc5e642be.jpg",
@@ -84,14 +85,24 @@ export const SwipeCarousel = () => {
 };
 
 const Images = ({ imgIndex }: { imgIndex: number }) => {
+  const { data, error } = UnsplashImagesRandom();
+
+  if (error) return <div>Failed to load</div>;
+  if (!data)
+    return (
+      <div className="aspect-video w-full h-full flex items-center justify-center">
+        <Spinner size={"lg"} />
+      </div>
+    );
+
   return (
     <>
-      {imgs.map((imgSrc, idx) => {
+      {data?.map((imgSrc, idx) => {
         return (
           <motion.div
             key={idx}
             style={{
-              backgroundImage: `url(${imgSrc})`,
+              backgroundImage: `url(${imgSrc.urls.regular})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
