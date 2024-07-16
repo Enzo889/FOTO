@@ -26,7 +26,7 @@ export const SwipeCarousel = () => {
 
       if (x === 0) {
         setImgIndex((pv) => {
-          if (pv === 18) {
+          if (pv === 17) {
             return 0;
           }
           return pv + 1;

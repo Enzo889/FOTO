@@ -8,6 +8,7 @@ import {
   GalleryHorizontal,
   GalleryThumbnails,
   Home,
+  PanelBottomDashed,
   PersonStanding,
   Plane,
   Rabbit,
@@ -66,11 +67,10 @@ export function CarouselLabs() {
       icon: <Fingerprint />, // Asigna el ícono Sprout
     },
     {
-      title: "Sometime",
+      title: "Swipe Carousel",
       href: "/carousel/6",
-      description:
-        "Indulge in a global culinary adventure, learn to cook authentic dishes, and discover food traditions.",
-      icon: <FireExtinguisher />, // Asigna el ícono Utensils
+      description: "A carousel made with framer-motion and swipe interaction.",
+      icon: <PanelBottomDashed />, // Asigna el ícono Utensils
     },
   ];
 

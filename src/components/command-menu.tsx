@@ -3,12 +3,18 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import {
+  Fingerprint,
+  GalleryHorizontal,
+  GalleryThumbnails,
   Home,
   LaptopIcon,
   MoonIcon,
+  PanelBottomDashed,
   PersonStanding,
   Plane,
   Rabbit,
+  Rotate3D,
+  Shrink,
   Sprout,
   SunIcon,
   Utensils,
@@ -80,7 +86,7 @@ export function CommandMenu({ ...props }) {
           <CommandEmpty>No results found.</CommandEmpty>
 
           <CommandSeparator />
-          <CommandGroup heading="Pages">
+          <CommandGroup heading="Category">
             <CommandItem onSelect={() => router.push("/architecture")}>
               <Home className="mr-2 h-4 w-4" />
               Architecture
@@ -104,6 +110,35 @@ export function CommandMenu({ ...props }) {
             <CommandItem onSelect={() => router.push("/food")}>
               <Utensils className="mr-2 h-4 w-4" />
               Food
+            </CommandItem>
+          </CommandGroup>
+          <CommandSeparator />
+
+          <CommandSeparator />
+          <CommandGroup heading="Carousel Showcase">
+            <CommandItem onSelect={() => router.push("/carousel/1")}>
+              <GalleryHorizontal className="mr-2 h-4 w-4" />
+              Shadcn-Version
+            </CommandItem>
+            <CommandItem onSelect={() => router.push("/carousel/2")}>
+              <Shrink className="mr-2 h-4 w-4" />
+              Divz-Version
+            </CommandItem>
+            <CommandItem onSelect={() => router.push("/carousel/3")}>
+              <Rotate3D className="mr-2 h-4 w-4" />
+              3D Carousel
+            </CommandItem>
+            <CommandItem onSelect={() => router.push("/carousel/4")}>
+              <GalleryThumbnails className="mr-2 h-4 w-4" />
+              Thumbnail
+            </CommandItem>
+            <CommandItem onSelect={() => router.push("/carousel/5")}>
+              <Fingerprint className="mr-2 h-4 w-4" />
+              Swipeable
+            </CommandItem>
+            <CommandItem onSelect={() => router.push("/carousel/6")}>
+              <PanelBottomDashed className="mr-2 h-4 w-4" />
+              Swipe Carousel
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
