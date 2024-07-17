@@ -122,31 +122,39 @@ export default function SwipeableStackCards() {
     <div className="flex flex-row-reverse justify-center gap-24 ">
       <div className="w-full max-w-xs p-4 relative">
         <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] bg-red-500 rounded-full blur-3xl" />
-        <div className="relative shadow-xl bg-gray-900 border border-gray-800  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
-          <h1 className="font-bold text-xl text-white mb-4 relative z-50">
+        <div className="relative shadow-xl bg-gray-200 dark:bg-gray-900 border border-gray-800  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
+          <h1 className="font-bold text-xl text-black dark:text-white mb-4 relative z-50">
             {selectedCard.title}
           </h1>
-          <p className="font-normal text-base text-slate-500 mb-4 relative z-50">
-            <span className="font-bold text-slate-400/80">Director:</span>{" "}
+          <p className="font-normal text-base text-slate-800 dark:text-slate-500 mb-4 relative z-50">
+            <span className="font-bold text-slate-900/80 dark:text-slate-400/80">
+              Director:
+            </span>{" "}
             {selectedCard.director}
           </p>
-          <p className="font-normal text-base text-slate-500 mb-4 relative z-50">
-            <span className="font-bold text-slate-400/80">Genre:</span>{" "}
+          <p className="font-normal text-base text-slate-800 dark:text-slate-500 mb-4 relative z-50">
+            <span className="font-bold text-slate-900/80 dark:text-slate-400/80">
+              Genre:
+            </span>{" "}
             {selectedCard.genre}
           </p>
-          <p className="font-normal text-base text-slate-500 mb-4 relative z-50">
-            <span className="font-bold text-slate-400/80">Duration:</span>{" "}
+          <p className="font-normal text-base text-slate-800 dark:text-slate-500 mb-4 relative z-50">
+            <span className="font-bold text-slate-900/80 dark:text-slate-400/80">
+              Duration:
+            </span>{" "}
             {selectedCard.duration}
           </p>
-          <p className="font-normal text-base text-slate-500 mb-4 relative z-50">
-            <span className="font-bold text-slate-400/80">Cast: </span>{" "}
+          <p className="font-normal text-base text-slate-800 dark:text-slate-500 mb-4 relative z-50">
+            <span className="font-bold text-slate-900/80 dark:text-slate-400/80">
+              Cast:{" "}
+            </span>{" "}
             {selectedCard.cast}
           </p>
           <details>
-            <summary className=" cursor-pointer font-normal text-base text-slate-500 mb-4 relative z-50 hover:text-slate-400 transition-colors duration-300">
+            <summary className=" cursor-pointer font-normal text-base text-slate-800 dark:text-slate-500 mb-4 relative z-50 hover:text-slate-900 dark:hover:text-slate-400 transition-colors duration-300">
               Sypnopsis:
             </summary>
-            <p className="font-normal text-base text-slate-500 text-pretty ">
+            <p className="font-normal text-base text-slate-800 dark:text-slate-500 text-pretty ">
               {selectedCard.info}
             </p>
           </details>
