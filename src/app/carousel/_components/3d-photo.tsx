@@ -107,7 +107,7 @@ export default function ThreeDPhotoCarousel() {
                         height={image.height}
                         className="pointer-events-none h-12 w-full rounded-xl object-cover md:h-20"
                       />
-                      <p className="text-black opacity-80 hover:opacity-100 transition-opacity duration-100 dark:text-white flex justify-center items-center gap-3">
+                      <p className="text-black opacity-80 hover:opacity-100 transition-opacity duration-300 dark:text-white flex justify-center items-center gap-3">
                         {image.user.total_likes}{" "}
                         <ThumbsUp className="w-3 h-3" />
                       </p>
