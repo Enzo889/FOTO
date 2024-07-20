@@ -3,6 +3,7 @@ import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
 import { UnsplashImagesRandom } from "@/utils/data";
 import { Spinner } from "@/components/Spinner";
+import Failed from "@/components/failed";
 
 const ONE_SECOND = 1000;
 const AUTO_DELAY = ONE_SECOND * 10;
@@ -77,7 +78,7 @@ export const SwipeCarousel = () => {
 const Images = ({ imgIndex }: { imgIndex: number }) => {
   const { data, error } = UnsplashImagesRandom();
 
-  if (error) return <div>Failed to load</div>;
+  if (error) return <Failed />;
   if (!data)
     return (
       <div className="aspect-video w-full h-full flex items-center justify-center">

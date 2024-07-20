@@ -15,11 +15,12 @@ import {
 } from "@/components/ui/drawer";
 import Link from "next/link";
 import { ArrowDownToLine, MoveUpRight, X } from "lucide-react";
+import Failed from "@/components/failed";
 
 export default function CarouselDivz() {
   const { data, error } = UnsplashImagesRandom();
 
-  if (error) return <div>Failed to load</div>;
+  if (error) return <Failed />;
   if (!data)
     return (
       <div className="flex items-center justify-center">

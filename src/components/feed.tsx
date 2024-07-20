@@ -19,6 +19,7 @@ import { PlaceholdersAndVanishInput } from "./ui/placeholders-and-vanish-input";
 import React, { useState } from "react";
 import CategoryFeed from "./category-feed";
 import { useInView } from "react-intersection-observer";
+import Failed from "./failed";
 
 export default function Feed() {
   const placeholders = [
@@ -54,7 +55,7 @@ export default function Feed() {
     setQuery(searchText);
   };
 
-  if (error) return <div>Failed to load images</div>;
+  if (error) return <Failed />;
   if (!data)
     return (
       <div className="flex items-center justify-center h-screen">

@@ -1,4 +1,5 @@
 "use client";
+import Failed from "@/components/failed";
 import { Spinner } from "@/components/Spinner";
 import {
   Drawer,
@@ -52,7 +53,7 @@ export default function ThreeDPhotoCarousel() {
     return `rotate3d(0, 1, 0, ${value}deg)`;
   });
 
-  if (error) return <div>Failed to load</div>;
+  if (error) return <Failed />;
   if (!data)
     return (
       <div className="flex items-center justify-center">

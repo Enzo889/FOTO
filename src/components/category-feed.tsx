@@ -18,6 +18,7 @@ import Link from "next/link";
 import { ArrowDownToLine, MoveUpRight, X } from "lucide-react";
 import { Button } from "./ui/button";
 import React from "react";
+import Failed from "./failed";
 
 export default function CategoryFeed({ query }: { query: string }) {
   const { data, error, isLoading, setSize, size } =
@@ -33,7 +34,7 @@ export default function CategoryFeed({ query }: { query: string }) {
     }
   }, [inView, isLoading, isFetching, setSize, size]);
 
-  if (error) return <div>Failed to load images</div>;
+  if (error) return <Failed />;
   if (isLoading && size === 1)
     return (
       <div className="flex items-center justify-center h-screen">

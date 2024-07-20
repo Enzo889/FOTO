@@ -19,6 +19,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import Link from "next/link";
+import Failed from "@/components/failed";
 
 type PropType = {
   options?: EmblaOptionsType;
@@ -56,7 +57,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   const { data, error } = UnsplashImagesRandom();
 
-  if (error) return <div>Failed to load</div>;
+  if (error) return <Failed />;
   if (!data)
     return (
       <div className="flex items-center justify-center">
