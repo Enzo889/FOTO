@@ -1,3 +1,4 @@
+import { Icons } from "@/components/Icons";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -45,8 +46,13 @@ function NotFoundPage() {
         </span>{" "}
         by:{" "}
         <span>
-          <Link target="_blank" href="https://twitter.com/enzodev_">
+          <Link
+            className="relative group "
+            target="_blank"
+            href="https://twitter.com/enzodev_"
+          >
             Enzo Bustamante
+            <Icons.underline className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-3.5 text-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 " />
           </Link>
         </span>
       </p>
