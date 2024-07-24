@@ -1,7 +1,8 @@
 import useSWR from "swr";
 import useSWRInfinite from "swr/infinite";
 import axios from "axios";
-import { Image, ImagesSearch } from "@/interfaces";
+import { Image } from "@/interfaces/feed";
+import { ImagesSearch } from "@/interfaces/search";
 import { useState } from "react";
 
 const BASE_URL = "https://api.unsplash.com/";
