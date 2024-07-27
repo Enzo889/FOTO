@@ -91,7 +91,7 @@ export default function Feed() {
                         key={image.id}
                         src={image.urls.regular}
                         alt={image.alt_description || "Unsplash Image"}
-                        loading="eager"
+                        loading="lazy"
                         blurDataURL={image.urls.regular}
                         title={image.alt_description || "Unsplash Image"}
                         width={image.width}

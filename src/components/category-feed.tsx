@@ -58,7 +58,7 @@ export default function CategoryFeed({ query }: { query: string }) {
                     key={image.id}
                     src={image.urls.regular}
                     alt={image.alt_description || "Unsplash Image"}
-                    loading="eager"
+                    loading="lazy"
                     blurDataURL={image.urls.small}
                     title={image.alt_description || "Unsplash Image"}
                     width={image.width}

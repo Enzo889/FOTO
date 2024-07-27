@@ -42,7 +42,13 @@ function NotFoundPage() {
         made with{" "}
         <span>
           {" "}
-          <Image src="/heart.webp" alt="heart" width={24} height={24} />
+          <Image
+            src="/heart.webp"
+            alt="heart"
+            loading="lazy"
+            width={24}
+            height={24}
+          />
         </span>{" "}
         by:{" "}
         <span>
