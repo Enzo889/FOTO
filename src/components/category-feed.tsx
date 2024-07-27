@@ -63,7 +63,7 @@ export default function CategoryFeed({ query }: { query: string }) {
                     title={image.alt_description || "Unsplash Image"}
                     width={image.width}
                     height={image.height}
-                    className="w-full h-full object-cover rounded-lg transform hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full aspect-video object-cover rounded-lg transform hover:scale-110 transition-transform duration-300"
                   />
                 </DrawerTrigger>
                 <DrawerContent className="flex items-center justify-center">
