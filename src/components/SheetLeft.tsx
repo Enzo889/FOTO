@@ -7,12 +7,18 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import {
+  Fingerprint,
+  GalleryHorizontal,
+  GalleryThumbnails,
   Home,
   LucideGithub,
   Menu,
+  PanelBottomDashed,
   PersonStanding,
   Plane,
   Rabbit,
+  Rotate3D,
+  Shrink,
   Sprout,
   Utensils,
 } from "lucide-react";
@@ -55,6 +61,36 @@ function SheetLeft() {
       href: "/food",
       icon: <Utensils />, // Asigna el ícono Utensils
     },
+    {
+      title: "Shadcn-Version",
+      href: "/carousel/1",
+      icon: <GalleryHorizontal />, // Asigna el ícono Home
+    },
+    {
+      title: "Divz-Version",
+      href: "/carousel/2",
+      icon: <Shrink />, // Asigna el ícono PersonStanding
+    },
+    {
+      title: "3D Carousel",
+      href: "/carousel/3",
+      icon: <Rotate3D />, // Asigna el ícono Plane
+    },
+    {
+      title: "Thumbnail",
+      href: "/carousel/4",
+      icon: <GalleryThumbnails />, // Asigna el ícono Rabbit
+    },
+    {
+      title: "Swipeable",
+      href: "/carousel/5",
+      icon: <Fingerprint />, // Asigna el ícono Sprout
+    },
+    {
+      title: "Swipe Carousel",
+      href: "/carousel/6",
+      icon: <PanelBottomDashed />, // Asigna el ícono Utensils
+    },
   ];
   return (
     <div>
@@ -80,6 +116,8 @@ function SheetLeft() {
                   </Link>
                 );
               })}
+
+              <hr />
               <Link
                 href="https://github.com/Enzo889/FOTO"
                 className="hover:opacity-70 flex items-center gap-2"
